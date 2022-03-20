@@ -5,34 +5,43 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom, cyan, white);
-  padding-top: 3rem;
+  background-image: linear-gradient(
+    to bottom,
+    #83d4f7,
+    pink,
+    rgb(253, 253, 102)
+  );
+  color: #e9a6d7;
+  padding-top: 8rem;
+  text-shadow: 0 0 2px green;
   text-align: center;
   background-attachment: fixed;
-  text-align: center;
 }
 
 h1 {
   font-size: 3rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 #score {
   font-size: 2rem;
+  padding-bottom: 3rem;
 }
 
 .circles {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 600px;
   justify-content: space-between;
+  padding-bottom: 3rem;
 }
 
 .circle {
-  height: 125px;
-  width: 125px;
-  background-color: darkgray;
+  height: 130px;
+  width: 140px;
+  background-image: url(https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -41,23 +50,32 @@ h1 {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  border-color: lightcoral;
+  border-color: #87c438;
   border-style: solid;
 }
 .circle.active {
-  background-color: rgb(117, 43, 43);
+  background-color: #87c438;
+  border-color: #f3c5e7;
 }
 
 button {
+  width: 150px;
+  height: 50px;
   font-family: inherit;
-  font-size: inherit;
-  background-color: lightcoral;
-  padding: 0.5em 1rem;
-  border: none;
+  font-size: 24px;
+  color: #e9a6d7;
+  background-color: yellowgreen;
+  text-shadow: 0 0 2px black;
+  text-align: center;
+  border: 1px solid yellow;
   border-radius: 5px;
   margin: 1rem;
   cursor: pointer;
 }
+
+/* button:hover {
+  transform: scale(1.2);
+} */
 
 #overlay {
   visibility: hidden;
@@ -74,15 +92,22 @@ button {
 }
 
 .modal {
-  background-color: wheat;
+  background-color: #83d4f7;
+  color: yellow;
   padding: 2rem;
   width: 40%;
   height: 35%;
   border-radius: 10px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 2;
 }
 
 .modal button {
+  width: 80px;
+  height: fit-content;
   position: absolute;
   top: 0;
   right: 0;
@@ -95,3 +120,10 @@ button {
 #stop {
   display: none;
 }
+/* @media (max-width: 1200px) {
+  .circles {
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+  }
+} */

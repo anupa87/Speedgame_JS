@@ -11,10 +11,25 @@ let score = 0;
 let pace = 1000;
 let rounds = 0;
 let timer;
+// //Adding sound
 
-// const clickedCircle = () => {
-//   console.log("circle was clicked");
-// };
+// let startSound = new sound (#);
+// let endSound = new sound(#);
+
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    this.sound.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
+}
 function getRndInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -36,6 +51,9 @@ const clickedCircle = (i) => {
 const startGame = () => {
   startButton.style.display = "none";
   endButton.style.display = "inline";
+  startSound.loop = true;
+  startSound.play();
+
   for (let i = 0; i < circles.length; i++) {
     circles[i].style.pointerEvents = "auto";
   }
@@ -49,7 +67,7 @@ const startGame = () => {
   timer = setTimeout(startGame, pace);
   pace = pace - 10;
 
-  if (rounds >= 3) {
+  if (rounds >= 1) {
     endGame();
   }
 
@@ -65,12 +83,24 @@ const startGame = () => {
     }
   }
 };
+function startSoundStop() {
+  startSound.stop();
+}
+function endSoundPlay() {
+  endSound.play();
+}
 
 const endGame = () => {
-  console.log("game ended");
   clearTimeout(timer);
   overlay.style.visibility = "visible";
-  resultText.textContent = `Your final score was ${score}`;
+
+  if (score == 0) {
+    resultText.textContent = `Your score is ${score}. Better luck next Easter!`;
+  } else if (score > 1 && score < 15) {
+    resultText.textContent = `Your score is ${score}. Not bad! Happy Easter to You!!`;
+  } else if (score > 15) {
+    resultText.textContent = `Your score is ${score}. Woo Hoo! Well played. Happy Happy Easter to You!!`;
+  }
 };
 const reloadGame = () => {
   window.location.reload();
