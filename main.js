@@ -13,8 +13,8 @@ let rounds = 0;
 let timer;
 // //Adding sound
 
-// let startSound = new sound (#);
-// let endSound = new sound(#);
+let startSound = new sound("./multimedia/start.wav");
+let endSound = new sound("./multimedia/end.wav");
 
 function sound(src) {
   this.sound = document.createElement("audio");
@@ -67,7 +67,7 @@ const startGame = () => {
   timer = setTimeout(startGame, pace);
   pace = pace - 10;
 
-  if (rounds >= 1) {
+  if (rounds >= 3) {
     endGame();
   }
 
@@ -107,5 +107,7 @@ const reloadGame = () => {
 };
 
 startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", startGameMusic);
 endButton.addEventListener("click", endGame);
+endButton.addEventListener("click", endGameMusic);
 closeButton.addEventListener("click", reloadGame);

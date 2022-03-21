@@ -28,7 +28,7 @@ h1 {
   padding-bottom: 3rem;
 }
 
-.circles {
+.squares {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -36,14 +36,13 @@ h1 {
   padding-bottom: 3rem;
 }
 
-.circle {
-  height: 130px;
-  width: 140px;
+.square {
+  height: 150px;
+  width: 150px;
   background-image: url(https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  border-radius: 50%;
   display: flex;
   margin: 2rem;
   cursor: pointer;
@@ -54,8 +53,13 @@ h1 {
   border-style: solid;
 }
 .circle.active {
-  background-color: #87c438;
+  /* background-color: #87c438; */
   border-color: #f3c5e7;
+}
+
+img {
+  width: 50px;
+  height: 50px;
 }
 
 button {
@@ -119,6 +123,9 @@ button {
 
 #stop {
   display: none;
+}
+.active {
+  background: url("./multimedia/easterEgg.svg");
 }
 /* @media (max-width: 1200px) {
   .circles {
