@@ -12,20 +12,27 @@ body {
     rgb(253, 253, 102)
   );
   color: #e9a6d7;
-  padding-top: 8rem;
   text-shadow: 0 0 2px green;
   text-align: center;
   background-attachment: fixed;
 }
+section{
+  padding-top: 3rem;
+}
 
 h1 {
   font-size: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+.container h2 {
+  margin-bottom: 3rem;
+
 }
 
 #score {
+  width: 100%;
   font-size: 2rem;
-  padding-bottom: 3rem;
+  border: 1px solid green;
 }
 
 .squares {
@@ -33,12 +40,12 @@ h1 {
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: space-between;
-  padding-bottom: 3rem;
 }
 
 .square {
   height: 150px;
   width: 150px;
+  border-radius: 5px;
   background-image: url(https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,12 +56,6 @@ h1 {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  border-color: #87c438;
-  border-style: solid;
-}
-.circle.active {
-  /* background-color: #87c438; */
-  border-color: #f3c5e7;
 }
 
 img {
@@ -76,10 +77,6 @@ button {
   margin: 1rem;
   cursor: pointer;
 }
-
-/* button:hover {
-  transform: scale(1.2);
-} */
 
 #overlay {
   visibility: hidden;
@@ -124,13 +121,42 @@ button {
 #stop {
   display: none;
 }
+
 .active {
   background: url("./multimedia/easterEgg.svg");
+  width: 150px;
+  height: 150px;
+  align-content: center;
 }
-/* @media (max-width: 1200px) {
-  .circles {
+
+@media (max-width: 375px) {
+  section {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 2rem;
   }
-} */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .squares {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+  }
+  .square {
+    margin: 10px auto;
+    padding: 0;
+  }
+  }
+}
