@@ -5,6 +5,7 @@
 }
 
 body {
+  height: 100vh;
   background-image: linear-gradient(
     to bottom,
     #83d4f7,
@@ -15,8 +16,10 @@ body {
   text-shadow: 0 0 2px green;
   text-align: center;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
-section{
+section {
   padding-top: 3rem;
 }
 
@@ -26,13 +29,11 @@ h1 {
 }
 .container h2 {
   margin-bottom: 3rem;
-
 }
 
 #score {
   width: 100%;
   font-size: 2rem;
-  border: 1px solid green;
 }
 
 .squares {
@@ -107,11 +108,14 @@ button {
 }
 
 .modal button {
-  width: 80px;
-  height: fit-content;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+#closeBtn {
+  background-color: transparent;
+  border: none;
 }
 
 #result {
@@ -150,7 +154,6 @@ button {
     flex-wrap: no-wrap;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid red;
     margin: 0;
     padding: 0;
   }
@@ -158,5 +161,7 @@ button {
     margin: 10px auto;
     padding: 0;
   }
+  .modal {
+    width: 100%;
   }
 }
